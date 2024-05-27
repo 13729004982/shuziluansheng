@@ -23,7 +23,8 @@ struct machineInfo
 
 struct message 
 {
-	bool isReq;
+	bool isFromClient;
+	bool isEditRequest;
 	string sender;
 	machineInfo info;
 };

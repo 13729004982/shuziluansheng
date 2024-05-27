@@ -29,10 +29,21 @@ messageParser::messageParser()
 				{
 					message msg = parse2Message((char*)m_oriList[0].c_str());
 					m_oriList.erase(m_oriList.begin());
-					if (msg.isReq)
-						//send response
-					else
-						//send request
+					if (msg.isFromClient) 
+					{
+						if (msg.isEditRequest) 
+						{
+							//do edit in db
+						}
+						else
+						{
+							//send response
+						}
+					}
+					else 
+					{
+						//do edit in ui
+					}
 				}
 			}
 		}));
@@ -54,7 +65,7 @@ message messageParser::parse2Message(char* ori)
     message msg;
 	string str(ori);
 	int pos = str.find(" ");
-	msg.isReq = str.substr(0, pos).compare("TRUE");
+	msg.isFromClient = str.substr(0, pos).compare("TRUE");
 	str = str.substr(pos + 1);
 	int pos = str.find(" ");
 	msg.sender = str.substr(0, pos);

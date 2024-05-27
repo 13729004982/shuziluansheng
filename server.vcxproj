@@ -127,11 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="messageParser.cpp" />
+    <ClCompile Include="dbconnector.cpp" />
+    <ClCompile Include="messageparser.cpp" />
     <ClCompile Include="server.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="messageParser.h" />
+    <ClInclude Include="dbconnector.h" />
+    <ClInclude Include="messageparser.h" />
     <ClInclude Include="server.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

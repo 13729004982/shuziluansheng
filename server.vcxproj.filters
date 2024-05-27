@@ -15,18 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="messageParser.cpp">
+    <ClCompile Include="messageparser.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="server.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="dbconnector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="messageParser.h">
+    <ClInclude Include="messageparser.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="server.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dbconnector.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

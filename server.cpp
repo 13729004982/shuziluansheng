@@ -68,7 +68,7 @@ void server::start()
 	struct sockaddr_in clientaddr;
 	socklen_t clientlen;
 	int connfd;
-	char buf[MAX_CLIENTS];
+	char buf[DEFAULT_BUFLEN];
 	char str[INET_ADDRSTRLEN];
 	while (true)
 	{
@@ -80,7 +80,7 @@ void server::start()
 			close(m_socket);
 			inet_ntop(AF_INET, &clientaddr.sin_addr, str, sizeof(str));
 			printf("server: got connection from %s\n", str);
-			n = recv(connfd, buf, MAX_CLIENTS, 0);
+			n = recv(connfd, buf, DEFAULT_BUFLEN, 0);
 			buf[n] = '\0';
 			printf("server: received %s\n", buf);
 			m_parser->addOri(buf);
@@ -96,7 +96,7 @@ void server::start()
 		}
 		inet_ntop(AF_INET, &clientaddr.sin_addr, str, sizeof(str));
 		printf("server: got connection from %s\n", str);
-		n = recv(connfd, buf, MAX_CLIENTS, 0);
+		n = recv(connfd, buf, DEFAULT_BUFLEN, 0);
 		buf[n] = '\0';
 		printf("server: received %s\n", buf);
 		m_parser->addOri(buf);
